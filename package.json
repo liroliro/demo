@@ -1,0 +1,54 @@
+{
+  "name": "wdn-demo",
+  "private": true,
+  "description": "Demo site for WDN Solutions",
+  "version": "0.1.0",
+  "author": "Hannes Elvemyr",
+  "prettier": "@accodeing/prettier-config",
+  "stylelint": {
+    "extends": "stylelint-config-recommended",
+    "plugins": [
+      "stylelint-no-unsupported-browser-features",
+      "stylelint-scss"
+    ],
+    "defaultSeverity": "warning",
+    "rules": {
+      "at-rule-no-unknown": null,
+      "plugin/no-unsupported-browser-features": true,
+      "scss/at-rule-no-unknown": true
+    }
+  },
+  "scripts": {
+    "build": "gatsby clean && gatsby build --prefix-paths",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "lint": "./node_modules/eslint/bin/eslint.js src/",
+    "deploy:staging": "./node_modules/@accodeing/gatsby-theme-heimr/scripts/deploy.sh staging accodeing.dev",
+    "deploy:production": "./node_modules/@accodeing/gatsby-theme-heimr/scripts/deploy.sh production"
+  },
+  "dependencies": {
+    "@accodeing/gatsby-theme-heimr": "^0.50.0",
+    "@heimr/eslint-config-gatsby": "^1.1.0",
+    "gatsby": "2.27.1",
+    "gatsby-remark-images": "^3.7.1",
+    "gatsby-source-google-docs": "^2.0.0-beta.40",
+    "gatsby-transformer-remark": "^2.12.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@accodeing/prettier-config": "^2019.8.2-1.1",
+    "@danbruegge/gatsby-plugin-stylelint": "^4.1.0",
+    "eslint": "^6.6.0",
+    "eslint-plugin-compat": "^3.3.0",
+    "eslint-plugin-react-app": "^6.0.3",
+    "prettier": "^1.18.2",
+    "stylelint": "13.3.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-no-unsupported-browser-features": "^4.0.0",
+    "stylelint-scss": "^3.18.0"
+  }
+}
