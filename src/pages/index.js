@@ -36,11 +36,9 @@ export default ({ data }) => {
             <ul className='split-google-docs'>
               {pages.edges.map((page) => {
                 return (
-                  <li className='list-item'>
-                    <Link to={page.node.frontmatter.path}>
-                      {page.node.frontmatter.name}
-                    </Link>
-                  </li>
+                  <Link to={page.node.frontmatter.path}>
+                    <li className='list-item'>{page.node.frontmatter.name}</li>
+                  </Link>
                 )
               })}
             </ul>
